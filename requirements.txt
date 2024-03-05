@@ -1,0 +1,4 @@
+import streamlit as st  # Import Streamlit
+import pandas as pd  # For data manipulation
+import matplotlib.pyplot as plt  # For data visualization
+import seaborn as sns  # For advanced data visualization
