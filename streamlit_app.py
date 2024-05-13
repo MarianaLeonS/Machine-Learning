@@ -1,10 +1,18 @@
 import streamlit as st
+from pages import home, learn, test
 
-st.set_page_config(
-    page_title="Hello",
-    page_icon="👋",
-)
+PAGES = {
+    "Home": home,
+    "Learn": learn,
+    "Test": test
+}
 
-st.write("# Welcome to Streamlit! 👋")
+def main():
+    st.sidebar.title('Navigation')
+    selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 
-st.sidebar.success("Select a demo above.")
+    page = PAGES[selection]
+    page.app()
+
+if __name__ == "__main__":
+    main()
